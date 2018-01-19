@@ -1,0 +1,12 @@
+.Vertex {
+    cursor: pointer;
+}
+
+.Vertex text {
+    color: red;
+    font-size: 12px;
+}
+
+.selected {
+    fill: red;
+}

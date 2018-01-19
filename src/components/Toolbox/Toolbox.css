@@ -1,0 +1,68 @@
+.Toolbox {
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    background: #bfbfbf;
+    border: 1px solid;
+    border-top-color: #dfdfdf;
+    border-left-color: #dfdfdf;
+    border-right-color: #808080;
+    border-bottom-color: #808080;
+    box-shadow: 1px 1px 0 0 #000;
+    width: 200px;
+    cursor: default;
+}
+
+.Toolbox .content {
+    padding: 7px 10px;
+}
+
+.Toolbox .header {
+    margin: 2px 2px 0;
+    padding: 1px 2px;
+    color: #fff;
+    background: -webkit-linear-gradient(left, #000080, #1084d0);
+    background: linear-gradient(to right, #000080, #1084d0);
+    font-weight: bold;
+    font-size: 11px;
+    line-height: 16px;
+}
+
+.Toolbox button {
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: none;
+    font-size: 11px;
+    font-family: Tahoma, Verdana;
+    color: #070707;
+    background: #bfbfbf;
+    border: 1px solid;
+    border-top-color: #dfdfdf;
+    border-left-color: #dfdfdf;
+    border-right-color: #808080;
+    border-bottom-color: #808080;
+    box-shadow: 1px 1px 0 0 #000;
+    text-align: center;
+    outline: none;
+    padding: 4px;
+    cursor: default;
+    margin: 2px;
+}
+
+.Toolbox button:enabled {
+    color: #070707;
+}
+
+.Toolbox button:disabled {
+    color: #818181;
+    text-shadow: 1px 1px #fff;
+}
+
+.Toolbox button:active:enabled,
+.Toolbox button.active {
+    box-shadow: 1px 1px 0 0 #000 inset;
+    border-top-color: #808080;
+    border-left-color: #808080;
+    border-right-color: #dfdfdf;
+    border-bottom-color: #dfdfdf;
+}
+

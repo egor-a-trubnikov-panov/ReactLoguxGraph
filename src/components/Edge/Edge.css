@@ -1,0 +1,9 @@
+.Edge {
+    cursor: pointer;
+    stroke: black;
+    stroke-width: 3;
+}
+
+.selected {
+    fill: red;
+}
