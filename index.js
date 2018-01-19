@@ -32,7 +32,7 @@ loguxEventsHandler(app, storage, (storage) => {
 });
 
 if (app.env === 'production') {
-	app.listen({cert: 'rootCA.crt', key: 'rootCA.key'})
+	app.listen({cert: 'cert.pem', key: 'key.pem'})
 } else {
 	app.listen()
 }
