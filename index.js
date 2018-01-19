@@ -21,7 +21,6 @@ app.get('/api', (req, res) => {
 });
 
 app.post('/api', (req, res) => {
-	console.log(req.body);
 	fs.writeFileSync(pathToData, JSON.stringify(req.body));
 	res.json({complete: true});
 });
