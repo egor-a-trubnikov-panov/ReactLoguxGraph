@@ -13,7 +13,8 @@ import {
 	memoize,
 	indexOf,
 	__,
-	or
+	or,
+	and
 } from 'ramda';
 import pt from "prop-types"
 import {find_path} from 'dijkstrajs';
@@ -91,7 +92,7 @@ class App extends Component {
 	handleSelectVertex = (key) => () => {
 		const {state, state: {operation, selectedVertex, edgeList, vertexList}, onSetState} = this.props;
 		if (equals(operation, addEdge)) {
-			if (not(isNil(selectedVertex))) {
+			if (and(not(isNil(selectedVertex), not(equals(selectedVertex, key))))) {
 				onSetState(
 					compose(
 						set(lensProp('selectedVertex'), null),
