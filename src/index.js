@@ -11,7 +11,7 @@ import {defaultState} from './constants'
 const logux = new Client({
 	credentials: 'token',
 	subprotocol: '1.0.0',
-	url: window.location.origin.replace(/^http/, 'ws').replace(/:[0-9]*$/, ':1337')
+	url: `${window.location.origin.replace(/^http/, 'ws').replace(/:[0-9]*$/, '')}:1337`
 });
 
 logux.sync.connection.connect();
