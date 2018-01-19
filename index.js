@@ -31,4 +31,8 @@ loguxEventsHandler(app, storage, (storage) => {
 	fs.writeFileSync(pathToData, JSON.stringify(storage.getState()));
 });
 
-app.listen({port: 1337});
+if (app.env === 'production') {
+	app.listen({cert: 'rootCA.crt', key: 'rootCA.key'})
+} else {
+	app.listen()
+}
