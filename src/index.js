@@ -3,34 +3,32 @@ import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './utils/registerServiceWorker';
 import React, {Component} from 'react';
-import storage from './utils/storage';
-import loguxEventsHandler from './utils/loguxEventsHandler'
-import Client from 'logux-client/client'
 import {defaultState} from './constants'
-
-const logux = new Client({
-	credentials: 'token',
-	subprotocol: '1.0.0',
-	url: `${window.location.origin.replace(/^http/, 'ws').replace(/:[0-9]*$/, '')}:1337`
-});
-
-logux.sync.connection.connect();
-
 
 class Provider extends Component {
 	state = defaultState;
 
 	componentWillMount() {
-		loguxEventsHandler(logux, storage, (storage) => {
-			this.setState(storage.getState());
-		});
+		fetch('./api')
+			.then(function (res) {
+				return res.json();
+			})
+			.then((data) => {
+				this.setState(data);
+			});
 	}
 
 	onSetState = (state) => {
-		logux.log.add({
-			type: 'setState',
-			payload: state
-		});
+		this.setState(state);
+		fetch("./api",
+			{
+				method: "POST",
+				headers: {
+					'Accept': 'application/json, text/plain, */*',
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(state)
+			})
 	};
 
 	render() {

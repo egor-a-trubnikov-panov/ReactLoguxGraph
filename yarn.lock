@@ -1000,7 +1000,7 @@ bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.1.1, bn.js@^4.4.0:
   version "4.11.8"
   resolved "https://registry.yarnpkg.com/bn.js/-/bn.js-4.11.8.tgz#2cde09eb5ee341f484746bb0309b3253b1b1442f"
 
-body-parser@1.18.2:
+body-parser@1.18.2, body-parser@^1.18.2:
   version "1.18.2"
   resolved "https://registry.yarnpkg.com/body-parser/-/body-parser-1.18.2.tgz#87678a19d84b47d859b83199bd59bce222b10454"
   dependencies:
@@ -4014,40 +4014,6 @@ loglevel@^1.4.1:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/loglevel/-/loglevel-1.6.1.tgz#e0fc95133b6ef276cdc8887cdaf24aa6f156f8fa"
 
-logux-client@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/logux-client/-/logux-client-0.1.0.tgz#7a110221d26fc88b2e1041b0c7bb2300956ff1bb"
-  dependencies:
-    logux-core "^0.1.0"
-    logux-sync "^0.1.0"
-    shortid "^2.2.6"
-
-logux-core@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/logux-core/-/logux-core-0.1.0.tgz#1b7663de250170c4e7a13536275af61f93fe54c6"
-  dependencies:
-    nanoevents "^0.3.0"
-
-logux-server@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/logux-server/-/logux-server-0.1.1.tgz#3947079969274bea0baa53228024f9c261ef689c"
-  dependencies:
-    chalk "^1.1.3"
-    logux-core "^0.1.0"
-    logux-sync "^0.1.0"
-    semver "^5.3.0"
-    shortid "^2.2.6"
-    strip-ansi "^3.0.1"
-    ws "^1.1.1"
-    yyyy-mm-dd "^1.0.1"
-
-logux-sync@^0.1.0:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/logux-sync/-/logux-sync-0.1.2.tgz#219973ee3cccdc03027acd089938315b5e60a78d"
-  dependencies:
-    nanoevents "^0.3.0"
-    object-assign "^4.1.0"
-
 longest@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/longest/-/longest-1.0.1.tgz#30a0b2da38f73770e8294a0d22e6625ed77d0097"
@@ -4266,10 +4232,6 @@ mute-stream@0.0.7:
 nan@^2.3.0:
   version "2.8.0"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.8.0.tgz#ed715f3fe9de02b57a5e6252d90a96675e1f085a"
-
-nanoevents@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/nanoevents/-/nanoevents-0.3.0.tgz#4d7ed1e38510e19bd79b99ffc4a2e5f91f33a411"
 
 natural-compare@^1.4.0:
   version "1.4.0"
@@ -4503,10 +4465,6 @@ optionator@^0.8.1, optionator@^0.8.2:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
     wordwrap "~1.0.0"
-
-options@>=0.0.5:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/options/-/options-0.0.6.tgz#ec22d312806bb53e731773e7cdaefcf1c643128f"
 
 original@>=0.0.5:
   version "1.0.0"
@@ -5786,10 +5744,6 @@ shellwords@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/shellwords/-/shellwords-0.1.1.tgz#d6b9181c1a48d397324c84871efbcfc73fc0654b"
 
-shortid@^2.2.6:
-  version "2.2.8"
-  resolved "https://registry.yarnpkg.com/shortid/-/shortid-2.2.8.tgz#033b117d6a2e975804f6f0969dbe7d3d0b355131"
-
 signal-exit@^3.0.0, signal-exit@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/signal-exit/-/signal-exit-3.0.2.tgz#b5fdc08f1287ea1178628e415e25132b73646c6d"
@@ -6299,9 +6253,15 @@ uid-number@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/uid-number/-/uid-number-0.0.6.tgz#0ea10e8035e8eb5b8e4449f06da1c730663baa81"
 
-ultron@1.0.x:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/ultron/-/ultron-1.0.2.tgz#ace116ab557cd197386a4e88f4685378c8b2e4fa"
+uinexpress@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/uinexpress/-/uinexpress-0.0.5.tgz#a4b97988c365ef1c171662a7b9e07c788e143587"
+  dependencies:
+    underscore ""
+
+underscore@:
+  version "1.8.3"
+  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.8.3.tgz#4f3fb53b106e6097fcf9cb4109f2a5e9bdfa5022"
 
 uniq@^1.0.1:
   version "1.0.1"
@@ -6665,13 +6625,6 @@ write@^0.2.1:
   dependencies:
     mkdirp "^0.5.1"
 
-ws@^1.1.1:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-1.1.5.tgz#cbd9e6e75e09fc5d2c90015f21f0c40875e0dd51"
-  dependencies:
-    options ">=0.0.5"
-    ultron "1.0.x"
-
 xdg-basedir@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/xdg-basedir/-/xdg-basedir-2.0.0.tgz#edbc903cc385fc04523d966a335504b5504d1bd2"
@@ -6778,7 +6731,3 @@ yargs@~3.10.0:
     cliui "^2.1.0"
     decamelize "^1.0.0"
     window-size "0.1.0"
-
-yyyy-mm-dd@^1.0.1:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/yyyy-mm-dd/-/yyyy-mm-dd-1.0.2.tgz#fc649168cc55e637b751a2e760c8af8f038c62d2"

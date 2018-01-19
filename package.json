@@ -6,19 +6,20 @@
     "node": "8.9.4"
   },
   "dependencies": {
+    "body-parser": "^1.18.2",
     "concurrently": "^3.5.1",
     "dijkstrajs": "^1.0.1",
-    "logux-client": "^0.1.0",
-    "logux-server": "^0.1.1",
+    "express": "^4.16.2",
     "prop-types": "^15.6.0",
     "ramda": "^0.25.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-draggable": "^3.0.5",
-    "react-scripts": "1.0.17"
+    "react-scripts": "1.0.17",
+    "uinexpress": "^0.0.5"
   },
   "scripts": {
-    "start": "concurrently --kill-others \"react-scripts start\" \"node index.js\"",
+    "start": "concurrently --kill-others \"react-scripts build\" \"node index.js\"",
     "dev": "react-scripts start",
     "server": "node index.js",
     "build": "react-scripts build",

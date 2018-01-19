@@ -1,38 +1,48 @@
-const Server = require('logux-server').Server;
+const express = require('express');
+const bodyParser = require('body-parser');
 const path = require('path');
 const fs = require('fs');
 const pathToData = path.resolve('data.json');
-const loguxEventsHandler = require('./src/utils/loguxEventsHandler');
 
-const storage = require('./src/utils/storage');
+const app = express();
 
-const app = new Server({
-	subprotocol: '1.0.0',
-	supports: '1.x',
-	root: __dirname
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.static(__dirname + "/build"));
+app.engine('html', require('uinexpress').__express);
+app.set('view engine', 'html');
+
+app.get('/', (req, res) => {
+	res.render('index.html');
 });
 
-function senInitialData() {
-	setTimeout(function () {
-		const initalData = JSON.parse(fs.readFileSync(pathToData));
-		app.log.add({
-			type: 'setState',
-			payload: initalData
-		});
-	}, 50);
-}
-
-app.auth((token) => {
-	senInitialData();
-	return Promise.resolve(true);
+app.get('/api', (req, res) => {
+	res.json(JSON.parse(fs.readFileSync(pathToData)));
 });
 
-loguxEventsHandler(app, storage, (storage) => {
-	fs.writeFileSync(pathToData, JSON.stringify(storage.getState()));
+app.post('/api', (req, res) => {
+	console.log(req.body);
+	fs.writeFileSync(pathToData, JSON.stringify(req.body));
+	res.json({complete: true});
 });
 
-if (app.env === 'production') {
-	app.listen({cert: 'rootCA.crt', key: 'rootCA.key'})
-} else {
-	app.listen()
-}
+// catch 404 and forward to error handler
+app.use((req, res, next) => {
+	res.status(404);
+	res.json({
+		error: 'Not found'
+	});
+	return;
+});
+
+// error handlers
+app.use((err, req, res, next) => {
+	res.status(err.status || 500);
+	res.json({
+		error: err.message
+	});
+	return;
+});
+
+const port = process.env.PORT || 3000;
+app.listen(port);
